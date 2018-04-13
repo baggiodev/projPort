@@ -7,15 +7,23 @@ import Blog from "./components/pages/Blog";
 import Contact from "./components/pages/Contact";
 
 const App = () => (
+<div className="container">
   <Router>
-    <div>
+  <div>
       <Navpills />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/about" component={About} />
-      <Route exact path="/blog" component={Blog} />
-      <Route path="/contact" component={Contact} />
+      <div className="row">
+	      <div className="col-md-4">
+	      </div>
+	      <div className="col-md-8">
+	      <Route exact path="/" component={Home} />
+	      <Route exact path="/about" component={About} />
+	      <Route exact path="/blog" component={Blog} />
+	      <Route path="/contact" component={Contact} />
+	      </div>
     </div>
+   </div>
   </Router>
+</div>
 );
 
 export default App;
