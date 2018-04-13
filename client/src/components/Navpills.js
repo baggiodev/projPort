@@ -1,30 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Navpills = props => (
-  <ul className="nav nav-tabs">
-    <li
-      onClick={() => props.handlePageChange("Home")}
-      className={props.currentPage === "Home" ? "active" : ""}
-    >
-      <a>Home</a>
+const Navpills = () => (
+  <ul className="nav nav-tabs d-flex justify-content-around">
+    <li className={window.location.pathname === "/" ? "active" : ""}>
+      <Link to="/">Home</Link>
     </li>
-    <li
-      onClick={() => props.handlePageChange("About")}
-      className={props.currentPage === "About" ? "active" : ""}
-    >
-      <a>About</a>
+    <li className={window.location.pathname === "/about" ? "active" : ""}>
+      <Link to="/about">About</Link>
     </li>
-    <li
-      onClick={() => props.handlePageChange("Blog")}
-      className={props.currentPage === "Blog" ? "active" : ""}
-    >
-      <a>Blog</a>
+    <li className={window.location.pathname === "/blog" ? "active" : ""}>
+      <Link to="/blog">Blog</Link>
     </li>
-    <li
-      onClick={() => props.handlePageChange("Contact")}
-      className={props.currentPage === "Contact" ? "active" : ""}
-    >
-      <a>Contact</a>
+    <li className={window.location.pathname === "/contact" ? "active" : ""}>
+      <Link to="/contact">Contact</Link>
+    </li>
+    <li className={window.location.pathname === "/contact/learn" ? "active" : ""}>
+      <Link to="/contact/learn">Learn</Link>
     </li>
   </ul>
 );
