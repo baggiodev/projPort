@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class Header extends Component {
   state = {
@@ -28,16 +29,16 @@ class Header extends Component {
             <div id="socialNames" className="row">
               <div className="col-md-6">
                 <h1>Github</h1>
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/bshehadi"><i id="fabLogo" className="fab fa-github"></i></a>
+                <h1><a target="_blank" rel="noopener noreferrer" href="https://github.com/bshehadi"><i className="fab fa-github fabLogo"></i></a></h1>
               </div>
               <div className="col-md-6">
                   <h1>Linkedin</h1>
-                  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/baggio-shehadi"><i id="fabLogo" className="fab fa-linkedin"></i></a>
+                  <h1><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/baggio-shehadi"><i className="fab fa-linkedin fabLogo"></i></a></h1>
                 </div>
               </div>
               <div className="row">
                 <div className="col-md-12 d-flex justify-content-center">
-                  <h1>Twitter</h1>
+                  <h1>Twitter <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/baggio_shehadi"><i className="fabLogo" className="fab fa-twitter"></i></a></h1>
                 </div>
               </div>
             </div>

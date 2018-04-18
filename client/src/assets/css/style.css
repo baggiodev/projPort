@@ -48,9 +48,9 @@ div{
 #socialNames{
 	margin-left:10px;
 }
-#fabLogo{
-	height:30px;
-	width:30px;
+.fabLogo{
+	height:50px;
+	width:50px;
 	margin-left: 60px;
 }
 #social button{
