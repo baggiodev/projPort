@@ -1,7 +1,7 @@
 import React from "react";
 
 const Home = () => (
-  <div>
+  <div id="meDiv">
     <img id="me" alt="me" src="./assets/images/baggio.jpg" />
   </div>
 );
