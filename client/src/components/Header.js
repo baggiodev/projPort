@@ -15,7 +15,6 @@ class Header extends Component {
     }
   }
   render() {
-    console.log(this.state.buttonPressed);
     const button = <button onClick={this.changeButton}>{this.state.insideButton}</button>
     if(this.state.buttonPressed){
       return(
@@ -28,13 +27,20 @@ class Header extends Component {
             </div>
             <div id="socialNames" className="row">
               <div className="col-md-6">
-                <h1>Twitter</h1>
+                <h1>Github</h1>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/bshehadi"><i id="fabLogo" className="fab fa-github"></i></a>
               </div>
               <div className="col-md-6">
-                <h1>Linkedin</h1>
+                  <h1>Linkedin</h1>
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/baggio-shehadi"><i id="fabLogo" className="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-12 d-flex justify-content-center">
+                  <h1>Twitter</h1>
+                </div>
               </div>
             </div>
-          </div>
         )
     }
     else{
