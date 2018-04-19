@@ -1,12 +1,21 @@
 import React, { Component } from "react";
 import axios from "axios";
+import TweetCard from "./TweetCard";
 
 class Header extends Component {
   state = {
     buttonPressed: false,
-    insideButton: "+"
+    insideButton: "+",
+    tweets: []
+  }
+  componentDidMount = () => {
+    this.apiCall();
+  }
+  apiCall = () => {
+  axios.get("/api/twitter").then((data) => this.setState({tweets:data.data}))
   }
   changeButton = () => {
+    console.log(this.state.tweets);
     this.setState({buttonPressed: !this.state.buttonPressed})
     if(this.state.insideButton==="+"){
       this.setState({insideButton:"-"})
@@ -38,8 +47,22 @@ class Header extends Component {
               </div>
               <div className="row">
                 <div className="col-md-12 d-flex justify-content-center">
-                  <h1>Twitter <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/baggio_shehadi"><i className="fabLogo" className="fab fa-twitter"></i></a></h1>
+                  <h1>Twitter 
+                  <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/baggio_shehadi">
+                  <i className="fab fa-twitter fabLogo"></i>
+                  </a>
+                  </h1>
                 </div>
+              </div>
+              <div className="row d-flex justify-content-center">
+              {this.state.tweets.map(tweet => (
+          <TweetCard
+            id={tweet.id}
+            key={tweet.id}
+            created_at={tweet.created_at}
+            text={tweet.text}
+          />
+        ))}
               </div>
             </div>
         )

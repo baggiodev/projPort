@@ -32,8 +32,11 @@ app.get("/api/twitter",function(req,res){
   };
   client.get("statuses/user_timeline", params, function(error, tweets, response) {
     if (!error) {
-    	console.log(tweets.text)
-      res.json(tweets);
+      var twitters = []
+      for (var i = 0; i < 5; i++) {
+        twitters.push(tweets[i])
+      }
+      res.json(twitters);
     }
     else{
     	console.log(error);
@@ -41,7 +44,7 @@ app.get("/api/twitter",function(req,res){
   });
 })
 //react route
-app.get("*", function(req, res) {
+app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
