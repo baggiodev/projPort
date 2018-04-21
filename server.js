@@ -28,6 +28,7 @@ if(process.env.NODE_ENV === "production"){
 }
 app.post("/api/contact",function(req,res){
   console.log(req.body);
+  res.send(200);
 })
 app.get("/api/twitter",function(req,res){
 	var params = {

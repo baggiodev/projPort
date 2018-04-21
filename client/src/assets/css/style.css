@@ -81,8 +81,6 @@ div{
 	padding-left:0;
 	overflow: scroll;
 	color:#032436;
-	display: flex;
-	justify-content: center;
 }
 .card{
 	background-color: #6F90A2;
@@ -106,4 +104,40 @@ div{
 }
 .nav a{
 	color:white;
+}
+#main-content button{
+
+}
+input{
+	border-style: none;
+	color:#ecf4f8;
+	background-color:#032436;
+	width:200px;
+}
+#messageContent{
+	resize: both;
+	overflow: auto;
+	color:#ecf4f8;
+	background-color:#032436;
+	border-style: none;
+	width: 600px;
+	height:200px;
+}
+#emailFail{
+	border: 5px solid red;
+}
+.form input{
+	margin:10px 0;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ecf4f8;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #ecf4f8;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #ecf4f8;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #ecf4f8;
 }

@@ -15,7 +15,7 @@ class App extends Component {
       <Navpills />
       <div className="row">
       <Header />
-		      <div className="col-md-8" id="main-content">
+		      <div className="col-md-8 d-flex justify-content-center" id="main-content">
 		      <Route exact path="/" component={Home} />
 		      <Route exact path="/about" component={About} />
 		      <Route exact path="/blog" component={Blog} />
