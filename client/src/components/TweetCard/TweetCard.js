@@ -2,7 +2,7 @@ import React from "react";
 
 const TweetCard = props => (
   <div className="card">
-    <div className="img-container">
+    <div className="tweet-container">
     </div>
     <div className="content">
       <ul>

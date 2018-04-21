@@ -11,6 +11,7 @@ div{
 	display:flex;
 	justify-content: flex-end;
 	max-height: 100vh;
+	overflow: auto;
 }
 #header h1{
 	color:#ecf4f8;
@@ -50,7 +51,6 @@ div{
 }
 .fabLogo{
 	height:50px;
-	width:50px;
 	margin-left: 60px;
 }
 #social button{
@@ -80,7 +80,18 @@ div{
 	padding-top:20px;
 	padding-left:0;
 	overflow: scroll;
+	color:#032436;
+	display: flex;
+	justify-content: center;
 }
+.card{
+	background-color: #6F90A2;
+	margin-top: 10px;
+	border-style: none;
+	padding-top: 10px;
+	padding-right:10px;
+}
+
 .container{
 	margin:0;
 	min-width:100%;
