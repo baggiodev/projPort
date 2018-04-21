@@ -1,20 +1,74 @@
-import React from "react";
+import React, { Component } from "react";
+import axios from "axios";
 
-const Contact = () => (
-  <div>
-    <h1>Contact Page</h1>
-    <p>
-      Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis molestie urna.
-      Aliquam semper ultrices varius. Aliquam faucibus sit amet magna a ultrices. Aenean
-      pellentesque placerat lacus imperdiet efficitur. In felis nisl, luctus non ante euismod,
-      tincidunt bibendum mi. In a molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna
-      posuere, eget tristique dui dapibus. Maecenas fermentum elementum faucibus. Quisque nec metus
-      vestibulum, egestas massa eu, sollicitudin ipsum. Nulla facilisi. Sed ut erat ligula. Nam
-      tincidunt nunc in nibh dictum ullamcorper. Class aptent taciti sociosqu ad litora torquent per
-      conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at rhoncus. Etiam vel
-      condimentum magna, quis tempor nulla.
-    </p>
-  </div>
-);
+class Contact extends Component {
+  state = {
+    email: "",
+    name: "",
+    message: ""
+  }
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    let value = event.target.value;
+    const name = event.target.name;
 
+    if (name === "message") {
+      value = value.substring(0, 1000);
+    }
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
+  };
+  handleFormSubmit = event =>{
+    var weGood = false;
+    if(weGood){
+      axios.post("/api/contact",{
+        email:this.state.email,
+        name:this.state.name,
+        message:this.state.message
+      }).then(data =>{
+      this.setState({
+        email: "",
+        name: "",
+        message: ""
+      })
+    })
+  }
+  }
+  render() {
+    return(
+    <div>
+        <h1>
+          Contact Me!
+        </h1>
+        <form className="form">
+          <input
+            value={this.state.email}
+            name="email"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="E-mail"
+          /><br></br>
+          <input
+            value={this.state.name}
+            name="name"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Name"
+          /><br></br>
+          <input
+            value={this.state.message}
+            name="message"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Message"
+            id="messageContent"
+          /><br></br>
+          <button onClick={this.handleFormSubmit}>Submit</button>
+        </form>
+      </div>
+    )
+  }
+}
 export default Contact;

@@ -26,6 +26,9 @@ app.use(cookieParser());
 if(process.env.NODE_ENV === "production"){
 	app.use(express.static("client/build"))
 }
+app.post("/api/contact",function(req,res){
+  console.log(req.body);
+})
 app.get("/api/twitter",function(req,res){
 	var params = {
     screen_name: "baggio_shehadi"
