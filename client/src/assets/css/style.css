@@ -130,6 +130,13 @@ input{
 .form input{
 	margin:10px 0;
 }
+.project{
+	background-color:#ecf4f8;
+}
+#projectHolder{
+	display:block;
+	width:100%;
+}
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #ecf4f8;
 }
