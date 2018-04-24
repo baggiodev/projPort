@@ -4,7 +4,7 @@ import Header from "./components/Header"
 import Navpills from "./components/Navpills";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
-import Blog from "./components/pages/Blog";
+import Portfolio from "./components/pages/Portfolio";
 import Contact from "./components/pages/Contact";
 class App extends Component {
   render() {
@@ -18,7 +18,7 @@ class App extends Component {
 		      <div className="col-md-8 d-flex justify-content-center" id="main-content">
 		      <Route exact path="/" component={Home} />
 		      <Route exact path="/about" component={About} />
-		      <Route exact path="/blog" component={Blog} />
+		      <Route exact path="/portfolio" component={Portfolio} />
 		      <Route path="/contact" component={Contact} />
 	      </div>
     </div>
