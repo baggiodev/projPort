@@ -5,11 +5,39 @@ class Portfolio extends Component {
   state = {
     project: [{
       id:1,
-      name:"Test1",
+      name:"Test 1",
       info:"its good"
     },{
       id:2,
-      name:"Test2",
+      name:"Test 2",
+      info:"its better"
+    },{
+      id:3,
+      name:"Test 3",
+      info:"its better"
+    },{
+      id:4,
+      name:"Test 4",
+      info:"its better"
+    },{
+      id:5,
+      name:"Test 5",
+      info:"its better"
+    },{
+      id:6,
+      name:"Test 6",
+      info:"its better"
+    },{
+      id:7,
+      name:"Test 7",
+      info:"its better"
+    },{
+      id:8,
+      name:"Test 8",
+      info:"its better"
+    },{
+      id:9,
+      name:"Test 9",
       info:"its better"
     }]
   }
