@@ -21,10 +21,11 @@ app.use(morgan('dev'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser());
+app.use(express.static("client/build"))
 
-if(process.env.NODE_ENV === "production"){
-	app.use(express.static("client/build"))
-}
+// if(process.env.NODE_ENV === "production"){
+// 	app.use(express.static("client/build"))
+// }
 app.post("/api/contact",function(req,res){
   console.log(req.body);
   res.send(200);
@@ -46,8 +47,11 @@ app.get("/api/twitter",function(req,res){
     }
   });
 })
+app.get("/home",function(req,res){
+  res.send("/home.html");
+})
 //react route
-app.get("/", function(req, res) {
+app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
