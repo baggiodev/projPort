@@ -6,6 +6,8 @@ class Contact extends Component {
     email: "",
     name: "",
     message: "",
+    phoneNum: "",
+    birthday: "",
     emailFail: false,
     emailSent: false
   }
@@ -18,9 +20,36 @@ class Contact extends Component {
     let value = event.target.value;
     const name = event.target.name;
     console.log(this.state);
-    if (name === "message") {
-      value = value.substring(0, 1000);
-    }
+      if(name === "phoneNum"){
+        value = value.replace(/\D/g,'');
+        // Trim the remaining value to ten characters, to preserve phone number format
+        value = value.substring(0,10);
+        console.log(value);
+        // Based upon the length of the string, we add formatting as necessary
+        var size = value.length;
+        if(size == 0){
+                value = value;
+        }else if(size < 4){
+                value = '('+value;
+        }else if(size < 6){
+                value = '('+value.substring(0,3)+') '+value.substring(3,6);
+        }else{
+                value = '('+value.substring(0,3)+') '+value.substring(3,6)+'-'+value.substring(6,10);
+        }
+      }else if (name==="birthday"){
+        value = value.replace(/\D/g,'');
+        value = value.substring(0,8);
+        var size = value.length;
+        if(size == 0){
+                value = value;
+        }else if(size < 2){
+                value = `${value}`
+        }else if(size<4){
+          value = `${value.substring(0,2)}/${value.substring(2,4)}`
+        }else {
+                value = `${value.substring(0,2)}/${value.substring(2,4)}/${value.substring(4,8)}`
+        }
+      }
     // Updating the input's state
     this.setState({
       [name]: value
@@ -80,6 +109,22 @@ class Contact extends Component {
             onChange={this.handleInputChange}
             type="text"
             placeholder="Name"
+          /><br></br>
+          <input
+            value={this.state.birthday}
+            name="birthday"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Birthday"
+          /><br></br>
+          <input
+            value={this.state.phoneNum}
+            format="(###) ###-####"
+            name="phoneNum"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Phone Number"
+            mask=""
           /><br></br>
           <textarea
             value={this.state.message}
